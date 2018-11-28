@@ -4,6 +4,6 @@ import {storiesOf} from '@storybook/react';
 storiesOf('Client Passport|Demo', module)
   .add('Default', () => {
     return (
-      <div>Hello world!</div>
+      <div>Hello world 2!</div>
     );
   });

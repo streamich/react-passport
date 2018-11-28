@@ -29,10 +29,13 @@
     "release": "semantic-release",
     "storybook": "start-storybook -p 6010",
     "storybook:build": "build-storybook",
-    "storybook:clean": "rimraf storybook-static"
+    "storybook:clean": "rimraf storybook-static",
+    "start": "yarn storybook"
   },
   "keywords": [],
-  "dependencies": {},
+  "dependencies": {
+    "client-passport": "^1.0.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.1.6",
     "@commitlint/cli": "^7.2.1",
