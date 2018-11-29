@@ -4,6 +4,10 @@ import {passport} from 'client-passport';
 import {loader as googleLoader} from 'client-passport/lib/providers/google';
 import {loader as facebookLoader} from 'client-passport/lib/providers/facebook';
 import createAuthenticatorContext from '..';
+import {Avatar} from 'p4-ui/lib/atoms/Avatar';
+import {Button} from 'p4-ui/lib/molecules/Button';
+import ButtonGoogle from 'p4-ui/lib/molecules/ButtonGoogle';
+import ButtonFacebook from 'p4-ui/lib/molecules/ButtonFacebook';
 
 const authenticator = passport({
   providers: {
@@ -37,12 +41,30 @@ storiesOf('React Passport|Demo', module)
           }
 
           return (
-            <div>
-              {user
-                ? 'Authenticated'
-                : 'not authenticated'
+            <div style={{
+              margin: '40px auto',
+              maxWidth: 400,
+              textAlign: 'center',
+            }}>
+              {user &&
+                <div>
+                  <Avatar src={user.avatar} size={4}/>
+                  <br />
+                  <br />
+                  <Button onClick={auth.signOut} ghost block>Logout</Button>
+                  <br />
+                  <br />
+                </div>
               }
-              <button onClick={() => auth.signIn('google')}>SignIn with Google</button>
+              <br />
+              {!user &&
+                <div>
+                  <ButtonGoogle onClick={() => auth.signIn('google')} />
+                  <br />
+                  <br />
+                  <ButtonFacebook onClick={() => auth.signIn('facebook')} />
+                </div>
+              }
             </div>
           );
         }}
