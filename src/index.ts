@@ -20,7 +20,7 @@ export interface AuthenticatorConsumerProps {
   children: (state: AuthenticatorProviderState) => React.ReactNode;
 }
 
-export const createAuthenticatorContext = (authenticator: IAuthenticator) => {
+const createAuthenticatorContext = (authenticator: IAuthenticator) => {
   const defaultState = {
     loading: true,
     auth: authenticator,

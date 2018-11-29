@@ -27,7 +27,7 @@
     "build": "tsc",
     "test": "jest --no-cache --config='jest.config.js'",
     "release": "semantic-release",
-    "storybook": "start-storybook -p 6010",
+    "storybook": "start-storybook -p 6007",
     "storybook:build": "build-storybook",
     "storybook:clean": "rimraf storybook-static",
     "start": "yarn storybook"
