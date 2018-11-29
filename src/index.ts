@@ -54,9 +54,13 @@ const createAuthenticatorContext = (authenticator: IAuthenticator) => {
     }
   }
 
+  const useAuth = () => React.useContext(context);
+
   return {
     Provider: Provider as React.ComponentClass<AuthenticatorProviderProps, AuthenticatorProviderState>,
     Consumer: context.Consumer as React.SFC<AuthenticatorConsumerProps>,
+    context,
+    useAuth,
   };
 };
 
