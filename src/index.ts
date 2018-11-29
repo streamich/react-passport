@@ -20,7 +20,7 @@ export interface AuthenticatorConsumerProps {
   children: (state: AuthenticatorProviderState) => React.ReactNode;
 }
 
-export const createAuthenticatorContext = (authenticator: IAuthenticator) => {
+const createAuthenticatorContext = (authenticator: IAuthenticator) => {
   const defaultState = {
     loading: true,
     auth: authenticator,
@@ -54,9 +54,13 @@ export const createAuthenticatorContext = (authenticator: IAuthenticator) => {
     }
   }
 
+  const useAuth = () => React.useContext(context);
+
   return {
     Provider: Provider as React.ComponentClass<AuthenticatorProviderProps, AuthenticatorProviderState>,
     Consumer: context.Consumer as React.SFC<AuthenticatorConsumerProps>,
+    context,
+    useAuth,
   };
 };
 
