@@ -34,7 +34,7 @@
   },
   "keywords": [],
   "dependencies": {
-    "client-passport": "^1.0.0"
+    "client-passport": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
