@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/streamich/react-passport/compare/v1.0.0...v1.1.0) (2018-11-29)
+
+
+### Features
+
+* 🎸 use latest client-passport ([c6f422f](https://github.com/streamich/react-passport/commit/c6f422f))
+
 # 1.0.0 (2018-11-29)
 
 
