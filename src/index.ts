@@ -35,7 +35,7 @@ const createAuthenticatorContext = (authenticator: IAuthenticator) => {
 
     async componentDidMount () {
       this.mounted = true;
-      authenticator.onchange = this.onUser;
+      authenticator.subscribe(this.onUser);
 
       await loadingPromise;
       if (!this.mounted) return;
