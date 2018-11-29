@@ -1,7 +1,7 @@
 # react-passport
 
 - Client-side authentication for React
-- React context for [`client-passport`](https://github.com/streamich/client-passport).
+- React context for [`client-passport`](https://github.com/streamich/client-passport)
 - Provides Hooks API
 
 
@@ -20,6 +20,8 @@ First create an `authenticator` instance.
 
 ```js
 import {passport} from 'client-passport';
+import {loader as googleLoader} from 'client-passport/lib/providers/google';
+import {loader as facebookLoader} from 'client-passport/lib/providers/facebook';
 
 const authenticator = passport({
   providers: {
@@ -55,15 +57,15 @@ Now you can use it as React context.
 <Provider>
   <Consumer>{({loading, user, auth}) => {
     // ...
-  }</Consumer>
-<Provider>
+  }}</Consumer>
+</Provider>
 ```
 
 Where
 
-- `loading` &mdash; is a booling indicating whether `authenticator` itself is loading.
+- `loading` &mdash; is a boolean indicating whether `authenticator` itself is loading.
 - `auth` &mdash; is the instance of `authenticator`, you can use it for signing in/out `auth.signIn('google')` and `auth.signOut()`.
-- `user` &mdash; is `null` if user is not authenticated or an instance of `User` object if user is authenticated.
+- `user` &mdash; is `null` if user is not authenticated or an instance of `User` object if user is authenticated. You can use it as `user.name`, `user.avatar`, `user.token` etc.
 
 You can also use this library with React hooks.
 
